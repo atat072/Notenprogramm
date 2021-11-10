@@ -1,11 +1,13 @@
 package de.atat072.notenprogramm.main;
 
+import java.util.ArrayList;
+
 public class Calculator {
 
     public  Calculator(){
 
     }
-    public int average(int[] smallGrades, int bigGrade, boolean level){
+    public int average(ArrayList<Integer> smallGrades, int bigGrade, boolean level){
         if(level){
             return average_high(smallGrades,bigGrade);
         } else {
@@ -13,7 +15,7 @@ public class Calculator {
         }
     }
 
-    public int total(int[] averages, boolean level){
+    public int total(ArrayList<Integer> averages, boolean level){
         if(level){
             return total_high(averages);
         }else {
@@ -21,19 +23,39 @@ public class Calculator {
         }
     }
 
-    private int average_low(int[] smallGrades, int bigGrade){
+    private int average_low(ArrayList<Integer> smallGrades, int bigGrade){
+        //berechnung durchschnit Notensystem 1-6
+        int divider = 0;
+        int temp = 0;
+        for(int n: smallGrades){
+            divider = divider+1;
+            temp = temp + n;
+        }
+        temp = temp/divider;
+        temp = Math.round((temp+bigGrade)/2f);
+
+        return temp;
+    }
+
+    private int average_high(ArrayList<Integer> smallGrades, int bigGrade){
+        //TODO berchnung durchschnit Notensystem 0-15
         return 0;
     }
 
-    private int average_high(int[] smallGrades, int bigGrade){
-        return 0;
+    private int total_low(ArrayList<Integer> averages){
+        // berechnung Gesamtnote 1-6
+        int temp = 0;
+        int divider = 0;
+        for(int n: averages){
+            divider = divider+1;
+            temp = temp + n;
+        }
+        temp = Math.round( (float) temp/divider);
+        return temp;
     }
 
-    private int total_low(int[] averages){
-        return 0;
-    }
-
-    private int total_high(int[] averages){
+    private int total_high(ArrayList<Integer> averages){
+        //TODO berechnung Gesamtnote 0-15
         return 0;
     }
 }
