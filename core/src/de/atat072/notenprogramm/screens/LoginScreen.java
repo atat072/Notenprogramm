@@ -1,4 +1,7 @@
 package de.atat072.notenprogramm.screens;
 
-public class LoginScreen {
+import com.badlogic.gdx.ScreenAdapter;
+
+public class LoginScreen extends ScreenAdapter {
+
 }
