@@ -18,10 +18,11 @@ public class Notenprogramm extends Game {
         C= new Calculator();
         //just for testing
         ArrayList<Integer> test1 = new ArrayList<>();
-        test1.add(3);
-        test1.add(3);
-        test1.add(1);
-        System.out.println(C.total(test1,false));
+        test1.add(8);
+        test1.add(11);
+        test1.add(10);
+        test1.add(14);
+        System.out.println(C.total(test1,true));
     }
 
     @Override

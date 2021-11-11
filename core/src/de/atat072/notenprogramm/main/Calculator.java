@@ -31,15 +31,23 @@ public class Calculator {
             divider = divider+1;
             temp = temp + n;
         }
-        temp = temp/divider;
+        temp = Math.round((float)temp/divider);
         temp = Math.round((temp+bigGrade)/2f);
 
         return temp;
     }
 
     private int average_high(ArrayList<Integer> smallGrades, int bigGrade){
-        //TODO berchnung durchschnit Notensystem 0-15
-        return 0;
+        //berchnung durchschnit Notensystem 0-15
+        int temp = 0;
+        int divider = 0;
+        for(int n: smallGrades){
+            divider = divider+1;
+            temp = temp + n;
+        }
+        temp = Math.round((float)temp/divider);
+        temp = Math.round((float) (temp+bigGrade)/2);
+        return temp;
     }
 
     private int total_low(ArrayList<Integer> averages){
@@ -55,7 +63,14 @@ public class Calculator {
     }
 
     private int total_high(ArrayList<Integer> averages){
-        //TODO berechnung Gesamtnote 0-15
-        return 0;
+        // berechnung Gesamtnote 0-15
+        int temp = 0;
+        int divider = 0;
+        for(int n: averages){
+            divider = divider+1;
+            temp = temp + n;
+        }
+        temp = Math.round((float) temp/divider);
+        return temp;
     }
 }
